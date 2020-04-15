@@ -265,7 +265,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
                 android:background="@drawable/mybutton"
-                android:text="Finish"
+                android:text="Submit"
                 android:textColor="@color/whiteColor" />
 
         </LinearLayout>
