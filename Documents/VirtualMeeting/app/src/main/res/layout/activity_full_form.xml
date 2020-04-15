@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullFormActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:text="Sign up as Exporter"
+                android:textAlignment="center"
+                android:textColor="@color/whiteColor"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sign up as Exporter"
+                android:textAlignment="center"
+                android:textColor="@color/maintainBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/full_form_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="FULL NAME:"
+                android:inputType="text"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/full_form_co_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="COMPANY NAME:"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/full_form_co_industry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/maintainBlack"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/full_form_co_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_border"
+                android:text="Select Country"
+                android:textColor="@color/maintainBlack"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/full_form_co_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="DESIGNATION:"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/full_form_co_email_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="EMAIL:"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/full_form_co_email_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="ALTERNATE EMAIL:"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/full_form_co_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="WEBSITE:"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/country_code_picker_full_form_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/full_form_co_mobile_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MOBILE NUMBER:"
+                    android:inputType="phone"
+                    android:textColor="@color/maintainBlack"
+                    android:textColorHint="@color/maintainBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/country_code_picker_full_form_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/full_form_co_mobile_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="TELEPHONE NUMBER:"
+                    android:inputType="phone"
+                    android:textColor="@color/maintainBlack"
+                    android:textColorHint="@color/maintainBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/full_form_co_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="ADDRESS:"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+
+
+                <Button
+                    android:id="@+id/full_form_upload_profile_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_border"
+                    android:text="Upload Profile"
+                    android:textColor="@color/maintainBlack"
+                    android:layout_marginTop="8dp"/>
+
+
+                <Button
+                    android:id="@+id/full_form_upload_product_images_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_border"
+                    android:text="Upload Images"
+                    android:textColor="@color/maintainBlack"
+                    android:layout_marginTop="8dp"/>
+
+
+            <Spinner
+                android:id="@+id/full_form_target_market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/full_form_co_target_market_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/full_form_target_audience"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/full_form_co_target_audience_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/maintainBlack"
+                android:textColorHint="@color/maintainBlack"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/full_form_number_meetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <Spinner
+                android:id="@+id/full_form_type_meeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/whiteColor"
+                android:textAlignment="center"
+                android:text="Proposed Dates"/>
+
+            <CalendarView
+                android:id="@+id/full_form_co_proposed_dates_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/full_form_submit_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:background="@drawable/mybutton"
+                android:text="Finish"
+                android:textColor="@color/whiteColor" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
