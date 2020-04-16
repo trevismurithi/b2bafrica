@@ -303,9 +303,8 @@ public class FullFormActivity extends AppCompatActivity {
                     mDatabaseReference.child(user.getUid()).child(LegalLinks.EXPORTERS).push().setValue(personalInfo);
                     sendLinksToFirebase(user,coName,mIndustryData[numIndustry],mCountryData[numCountry],web,address);
                     addToFirebase(market,audience,mNumberData[numberMeeting],mMeetingTypeData[numType],dates);
-                    transition();
                     workOnThread(user);
-                    String data = "User ID"+ user.getUid() + "\n" +"Name: " + name + "\n" + "Designation: " + myRle + "\n" +
+                    String data = "User ID: "+ user.getUid() + "\n" +"Name: " + name + "\n" + "Designation: " + myRle + "\n" +
                             "Email: " + oneEmail + "\n" + "Alternate Email: " + secEmail + "\n" +
                             "Mobile: " + tel_1 + "\n" + "Telephone: " + tel_2 + "\n" + "Company: " + coName
                             + "\n" + "Industry: " + mIndustryData[numIndustry] + "\n" + "Country: " + mCountryData[numCountry]
@@ -316,8 +315,9 @@ public class FullFormActivity extends AppCompatActivity {
                     sendEmail(data);
 
 
+
                 }else {
-                    ToastShower2("Your form is already submitted");
+                    ToastShower2("Your form was already submitted");
                 }
             }
         });
@@ -418,8 +418,5 @@ public class FullFormActivity extends AppCompatActivity {
             sm.execute();
     }
 
-    private void transition(){
-        startActivity(new Intent(this,ThankYouNoteActivity.class));
-    }
 }
 
