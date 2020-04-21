@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -84,8 +85,10 @@ public class FullFormActivity extends AppCompatActivity {
     private String[] mMeetingTypeData;
     private CountryCodePicker mCountryCodePicker;
     private CountryCodePicker mCountryCodePicker2;
+    private CheckBox mCheckBox;
     private int mNumCountry;
     private String mCurDate;
+    private Boolean mIntroduction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +125,7 @@ public class FullFormActivity extends AppCompatActivity {
         submitInfo = findViewById(R.id.full_form_submit_information);
         mCountryCodePicker = findViewById(R.id.country_code_picker_full_form_1);
         mCountryCodePicker2 = findViewById(R.id.country_code_picker_full_form_2);
+        mCheckBox = findViewById(R.id.b2b_introduction_checkbox);
         //attach country code with edit text
         mCountryCodePicker.registerCarrierNumberEditText(myMobileNumber);
         mCountryCodePicker2.registerCarrierNumberEditText(myTelephone);
@@ -258,6 +262,7 @@ public class FullFormActivity extends AppCompatActivity {
         String dateIn = mCurDate;
         String profile = successProfile;
         String images = successImages;
+        mIntroduction = mCheckBox.isChecked();
         if( numIndustry != 0 &&  mNumCountry != 0 && numMarket != 0 && numAudience != 0 && numType != 0 && numberMeetings != 0){
             //head to Edit Text
             if(!name.isEmpty() && !coName.isEmpty() && !myRle.isEmpty() &&
@@ -302,7 +307,7 @@ public class FullFormActivity extends AppCompatActivity {
                     PersonalInfo personalInfo = new PersonalInfo(name,myRle,oneEmail,secEmail,tel_1,tel_2);
                     mDatabaseReference.child(user.getUid()).child(LegalLinks.EXPORTERS).push().setValue(personalInfo);
                     sendLinksToFirebase(user,coName,mIndustryData[numIndustry],mCountryData[numCountry],web,address);
-                    addToFirebase(market,audience,mNumberData[numberMeeting],mMeetingTypeData[numType],dates);
+                    addToFirebase(market,audience,mNumberData[numberMeeting],mMeetingTypeData[numType]+" B2B INTRO " +mIntroduction ,dates);
                     workOnThread(user);
                     String data = "User ID: "+ user.getUid() + "\n" +"Name: " + name + "\n" + "Designation: " + myRle + "\n" +
                             "Email: " + oneEmail + "\n" + "Alternate Email: " + secEmail + "\n" +
@@ -310,7 +315,7 @@ public class FullFormActivity extends AppCompatActivity {
                             + "\n" + "Industry: " + mIndustryData[numIndustry] + "\n" + "Country: " + mCountryData[numCountry]
                             + "\n" + "Website: " + web + "\n" + "Images and profile are uploaded" + "\n" +
                             "Target Market: " + market + "\n" + "Audience: " + audience + "\n" + "Number of Meetings: "
-                            + mNumberData[numberMeeting] + "\n" + "Preferred Meeting: " + mMeetingTypeData[numType] + "\n" +
+                            + mNumberData[numberMeeting] + "\n" + "Preferred Meeting: " + mMeetingTypeData[numType]+ " B2B INTRO " +mIntroduction + "\n" +
                             "Proposed Dates" + dates;
                     sendEmail(data);
 
