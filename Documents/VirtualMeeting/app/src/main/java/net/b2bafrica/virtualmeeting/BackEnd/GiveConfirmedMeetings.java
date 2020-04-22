@@ -31,7 +31,7 @@ public class GiveConfirmedMeetings {
     }
     private void sendToFirebase(BuyerInformation buyerInformation){
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child(LegalLinks.NEW_USERS);
-        databaseReference.child("xOhCQOQm74Vtt5RNx814tXVU0Pe2")
+        databaseReference.child("3nwt8kwt5HTJssGYqjCmAfDkhRQ2")
                 .child(LegalLinks.CONFIRMEDCLIENTS).push().setValue(buyerInformation);
     }
 

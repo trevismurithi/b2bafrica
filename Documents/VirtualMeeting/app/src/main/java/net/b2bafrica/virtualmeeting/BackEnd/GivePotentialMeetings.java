@@ -26,7 +26,7 @@ public class GivePotentialMeetings {
     }
     private void populateData(BuyerInformation buyerInformation){
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child(LegalLinks.NEW_USERS);
-        databaseReference.child("xOhCQOQm74Vtt5RNx814tXVU0Pe2")
+        databaseReference.child("3nwt8kwt5HTJssGYqjCmAfDkhRQ2")
                 .child(LegalLinks.POTENTIALCLIENTS).push().setValue(buyerInformation);
     }
 
